@@ -34,3 +34,5 @@
 	* SaaS stack that my team managed and continously improved
 * saas-stack-2.png
 	* SaaS stack that my team managed and continously improved
+* selenium-to-cypress.png
+	* Phased and prioritized plan for migration existing Selenium based automated tests to Cypress.IO
