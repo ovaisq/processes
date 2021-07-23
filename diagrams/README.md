@@ -44,6 +44,3 @@
 	* SaaS stack that my team managed and continously improved
 * selenium-to-cypress.png
 	* Phased and prioritized plan for migration existing Selenium based automated tests to Cypress.IO
-
-
-	new file:   gliffy_ovais_on_leave_2019_plan.png
