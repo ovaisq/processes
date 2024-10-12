@@ -85,37 +85,37 @@ flowchart TD
     CAM3[CAM3]
     CAM4[CAM4]
 
-    Z <--10GBE--> A
-    A <--10GBE
-    LAN--> C
+    Z <==10GBE==> A
+    A <==10GBE
+    LAN==> C
 
-    C <--SFP+--> B
-    B <--100Mbps--> FL1
-    B <--100Mbps--> FL2
-    C <--10GBE--> D
-    C <--10GBE--> E
-    C <--Bonded 2xSFP+
-    20GBE--> QNAP
+    C <==SFP+==> B
+    B <==100Mbps==> FL1
+    B <==100Mbps==> FL2
+    C <==10GBE==> D
+    C <==10GBE==> E
+    C <==Bonded 2xSFP+
+    20GBE==> QNAP
 
-    G <--1GBE--> B
-    D <--2.5GBE--> FB <--2.5GBE--> F
-    E <--2.5GBE--> HA
-    E <--2.5GBE--> HB
-    E <--1GBE--> HC
-    HA <--> GPU1
-    C <--1GBE--> FC <--> J
-    J <--POE--> CAM3
-    J <--POE--> CAM4
-    B <--1GBE POE--> H
-    H <--POE--> CAM1
-    H <--POE--> CAM2
-    HA2 <--> GPU2
-    D <--1GBE--> PS5
-    D <--2.5GBE--> HA2
-    FA <--2.5GBE POE+--> B
-    FA <--2.5GBE POE+--> B
-    FA <--2.5GBE POE+--> B
-    FA <--2.5GBE POE+--> B
+    G <==1GBE==> B
+    D <==2.5GBE==> FB <==2.5GBE==> F
+    E <==2.5GBE==> HA
+    E <==2.5GBE==> HB
+    E <==1GBE==> HC
+    HA <==> GPU1
+    C <==1GBE==> FC <==> J
+    J <==POE==> CAM3
+    J <==POE==> CAM4
+    B <==1GBE POE==> H
+    H <==POE==> CAM1
+    H <==POE==> CAM2
+    HA2 <==> GPU2
+    D <==1GBE==> PS5
+    D <==2.5GBE==> HA2
+    FA <==2.5GBE POE+==> B
+    FA <==2.5GBE POE+==> B
+    FA <==2.5GBE POE+==> B
+    FA <==2.5GBE POE+==> B
 
 ```
 
