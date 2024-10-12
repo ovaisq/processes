@@ -1,4 +1,8 @@
 ```mermaid
+---
+title: Wired Network Setup
+---
+
 %%{init: {'theme': 'forest', "loglevel":1,'themeVariables': {'lineColor': 'Blue', 'fontSize':'18px',"fontFamily": "Trebuchet MS"}}}%%
 
 flowchart TD
@@ -35,7 +39,8 @@ flowchart TD
     B[Zyxel
     XMG-108HP]
     C[MikroTik
-    CRS312-4C+8XG-RM]
+    CRS312-4C+8XG-RM
+    DHCP Server]
     E[MikroTik
     CRS310-8G+2S]
     D[Zyxel
@@ -50,22 +55,24 @@ flowchart TD
 
     FB[POE+ Injector]
     FC[POE Injector]
-    G[Raspberry Pi4
-    DNS + Unifi Controller]
+    G[Lenovo ThinkCentre M93p
+    DNS + Unifi Controller + Pi-Hole]
     H[Ubiquiti
     Mini Flex]
     J[Ubiquiti
     Flex]
     HA[VMware
-    ESXi]
+    ESXi 1]
+    HA2[VMware
+    ESXi 2]
     HB[OLLAMA3
     M1 Max]
     HC[Laser Printer]
     QNAP[(QNAP TS-873
     NAS)]
-    GPU1[OLLAMA1
+    GPU1[ESXi VM - OLLAMA1
     RTX3060]
-    GPU2[OLLAMA2
+    GPU2[ESXi VM - OLLAMA2
     RTX3060]
     PS5[Gaming
     Console]
@@ -86,24 +93,24 @@ flowchart TD
     B <--100Mbps--> FL2
     C <--10GBE--> D
     C <--10GBE--> E
-    C <--SFP+--> QNAP
-    C <--SFP+/iSCSI--> QNAP
+    C <--Bonded 2xSFP+
+    20GBE--> QNAP
 
     G <--1GBE--> B
     D <--2.5GBE--> FB <--2.5GBE--> F
-    E <--10GBE--> HA
     E <--2.5GBE--> HA
     E <--2.5GBE--> HB
     E <--1GBE--> HC
-    C <--1GBE--> GPU1
+    HA <--> GPU1
     C <--1GBE--> FC <--> J
     J <--POE--> CAM3
     J <--POE--> CAM4
     B <--1GBE POE--> H
     H <--POE--> CAM1
     H <--POE--> CAM2
-    D <--1GBE--> GPU2
+    HA2 <--> GPU2
     D <--1GBE--> PS5
+    D <--2.5GBE--> HA2
     FA <--2.5GBE POE+--> B
     FA <--2.5GBE POE+--> B
     FA <--2.5GBE POE+--> B
