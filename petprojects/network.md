@@ -86,7 +86,8 @@ flowchart TD
     CAM4[CAM4]
 
     Z <--10GBE--> A
-    A <--10GBE--> C
+    A <--10GBE
+    LAN--> C
 
     C <--SFP+--> B
     B <--100Mbps--> FL1
