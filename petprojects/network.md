@@ -71,9 +71,9 @@ flowchart TD
     QNAP[(QNAP TS-873
     NAS)]
     GPU1[ESXi VM - OLLAMA1
-    RTX3060]
+    2 x RTX 3060]
     GPU2[ESXi VM - OLLAMA2
-    RTX3060]
+    2 x RTX 4060ti]
     PS5[Gaming
     Console]
     FL1[Ubiquiti
