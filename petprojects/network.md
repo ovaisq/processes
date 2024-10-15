@@ -53,7 +53,6 @@ flowchart TD
     U6-Enterprise
     AP]
 
-    FB[POE+ Injector]
     FC[POE Injector]
     G[Lenovo ThinkCentre M93p
     DNS + Unifi Controller + Pi-Hole]
@@ -98,7 +97,7 @@ flowchart TD
     20GBE==> QNAP
 
     G <==1GBE==> B
-    D <==2.5GBE==> FB <==2.5GBE==> F
+    D <==2.5GBE==> F
     E <==2.5GBE==> HA
     E <==2.5GBE==> HB
     E <==1GBE==> HC
