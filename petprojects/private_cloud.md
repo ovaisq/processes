@@ -25,8 +25,10 @@ flowchart TD
     style SUPERSET fill:#ffffff,stroke:#13821a,stroke-width:4px
     style ChatGPTUI fill:#ffffff,stroke:#13821a,stroke-width:4px
     style SONAR fill:#ffffff,stroke:#13821a,stroke-width:4px
+    style JENKINS fill:#ffffff,stroke:#13821a,stroke-width:4px
     style BACKUP fill:#ff0d,stroke:#13821a,stroke-width:4px
     style LLMAPPS fill:#bbffdd,stroke:#13821a,stroke-width:4px
+    style LLMAPPSK8 fill:#bbffdd,stroke:#13821a,stroke-width:4px
     style RedditScraper fill:#ffffff,stroke:#13821a,stroke-width:4px
     style MedBillingForecast fill:#ffffff,stroke:#13821a,stroke-width:4px
     style VariousWorkflowAutomation fill:#ffffff,stroke:#13821a,stroke-width:4px
@@ -41,13 +43,20 @@ flowchart TD
     subgraph LLMAPPS["`**LLM Based Dockerized Services**`"]
         subgraph blank[ ]
         direction BT
-        RedditScraper[Reddit Data
-        Scraper
-        Service]
+
         MedBillingForecast[Medical Billing Forecasting
         Service]
         VariousWorkflowAutomation[Workflow
         Automation
+        Service]
+        end
+    end
+
+    subgraph LLMAPPSK8["`**LLM Based Services**`"]
+        subgraph blank2[ ]
+        direction BT
+        RedditScraper[Reddit Data
+        Scraper
         Service]
         end
     end
@@ -68,10 +77,10 @@ flowchart TD
 
     subgraph DATASTORE["`**Datastore**`"]
         REDIS[(Redis)]
-        ELASTIC[(ElasticCache)]
+        ELASTIC[(OpenSearch)]
     end
     subgraph K8["`**Managed K8 Cluster**`"]
-        subgraph KS3[Kubesphere 3.4.1]
+        subgraph KS3[Kubesphere 4.1.2]
             K8_1((Prod
             Kubernetes))
         end
@@ -97,6 +106,7 @@ flowchart TD
         SUPERSET[Apache Superset]
         ChatGPTUI[ChatGPT WebUI]
         SONAR[SonarQube]
+        JENKINS[Jenkins]
     end
 
 
@@ -113,6 +123,9 @@ flowchart TD
 
     DOCKER <--> LLMAPPS <--REST API--> HAPROXY
     LLM <--> HAPROXY
+
+    LLMAPPSK8 --Deployment/Service--> K8
+    LLMAPPSK8 --> HAPROXY
 
     APPS --HELM--> K8
 
@@ -136,5 +149,6 @@ flowchart TD
     
     PSQL <--> LLMAPPS
 class blank subgraph_padding
+class blank2 subgraph_padding
 ```
 
